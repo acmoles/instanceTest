@@ -92,8 +92,12 @@ function init() {
         const cube = new THREE.Mesh(geometry, particleMaterial);
         scene.add(cube);
 
+        // https://stackoverflow.com/questions/62137145/how-do-i-set-colors-for-three-js-instanced-objects
+        // https://dustinpfister.github.io/2021/06/09/threejs-buffer-geometry-attributes-uv/
+
         var colorParsChunk = [
             'attribute vec3 instanceColor;',
+            'attribute float instanceColor;',
             'varying vec3 vInstanceColor;',
             '#include <common>'
         ].join('\n');
@@ -384,18 +388,10 @@ function recreateInstancedMesh() {
     instancedMesh.frustumCulled = false;
     scene.add(instancedMesh);
 
-    // const color = new THREE.Color()
-    // for (let i = 0; i < particles.length; i++) {
-    //     //instancedMesh.setUniformAt('value', i, Math.random())
-    //     //instancedMesh.setUniformAt('topColor', i, color.set(Math.random() * 0xffffff))
-    // }
-
     for (var i = 0; i < particles.length; i++) {
-
         instanceColors.push(Math.random());
         instanceColors.push(Math.random());
         instanceColors.push(Math.random());
-
     }
 
     var instanceColorsBase = new Float32Array(instanceColors.length);
