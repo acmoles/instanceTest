@@ -1,0 +1,25 @@
+{
+    "name": "05-demo-typing-effects-with-webgl-tutorial",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "build": "parcel build index.html"
+    },
+    "dependencies": {
+        "@parcel/bundler-default": "2.8.0",
+        "three": "0.149.0",
+        "three-instanced-uniforms-mesh": "^0.47.0"
+    },
+    "devDependencies": {
+        "@babel/core": "7.2.0",
+        "parcel": "^2.8.3",
+        "parcel-reporter-static-files-copy": "^1.5.0",
+        "typescript": "4.4.4"
+    },
+    "resolutions": {
+        "@babel/preset-env": "7.13.8"
+    },
+    "keywords": []
+}
